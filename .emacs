@@ -29,7 +29,7 @@
 (setq-default tab-width 4)
 
 
-;;; Virtualenv dependancy
+;;; Virtualenv dependency
 (require 'python)
 (add-hook 'python-mode-hook '(lambda () (require 'virtualenv)))
 
@@ -76,17 +76,17 @@
 
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 ;;; Pymacs for Ropemacs
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
+;(autoload 'pymacs-apply "pymacs")
+;(autoload 'pymacs-call "pymacs")
+;(autoload 'pymacs-eval "pymacs" nil t)
+;(autoload 'pymacs-exec "pymacs" nil t)
+;(autoload 'pymacs-load "pymacs" nil t)
 ;;(eval-after-load "pymacs"
 ;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
 
 ;;; Activate ropemacs module under the rope- namespace
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
+;(pymacs-load "ropemacs" "rope-")
+;(setq ropemacs-enable-autoimport t)
 
 
 ;;; Enable autocomplete from ropemacs
@@ -102,7 +102,7 @@
 
 
 ;;; Activate w3m browser (mainly used for pylookup)
-(require 'w3m-load)
+;(require 'w3m-load)
 
 ;;; PYlookUp
 ;; add pylookup to your loadpath, ex) "~/.lisp/addons/pylookup"
