@@ -1,6 +1,3 @@
-[submodule ".emacs.d/pony-mode"]
-	path = .emacs.d/pony-mode
-	url = https://github.com/davidmiller/pony-mode.git
 [submodule ".emacs.d/yasnippet"]
 	path = .emacs.d/yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
