@@ -12,3 +12,11 @@ really fan of any commercial IDE.
 * Pymacs
 * Rope
 * YASnippet
+
+## Requirements
+
+* pip install pep8
+* pip install pylint
+* pip install pyflakes
+
+
