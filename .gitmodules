@@ -7,3 +7,9 @@
 [submodule ".emacs.d/themes/emacs-color-theme-solarized"]
 	path = .emacs.d/themes/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
+[submodule ".emacs.d/auto-complete"]
+	path = .emacs.d/auto-complete
+	url = http://cx4a.org/repo/auto-complete.git/
+[submodule ".emacs.d/popup"]
+	path = .emacs.d/popup
+	url = https://github.com/m2ym/popup-el.git
