@@ -1,8 +1,8 @@
 [submodule ".emacs.d/yasnippet"]
 	path = .emacs.d/yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
-[submodule ".emacs.d/themes/emacs-color-theme-solarized"]
-	path = .emacs.d/themes/emacs-color-theme-solarized
+[submodule ".emacs.d/theme/emacs-color-theme-solarized"]
+	path = .emacs.d/theme/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
 [submodule ".emacs.d/Pymacs"]
 	path = .emacs.d/Pymacs
