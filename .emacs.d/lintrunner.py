@@ -68,8 +68,6 @@ class LintRunner(object):
             print >> sys.stderr, "Line is broken: %s %s" % (cls, line)
 
     def run(self, filename):
-        import pdb
-        pdb.set_trace()
         args = [self.command]
         args.extend(self.run_flags)
         args.append(filename)
