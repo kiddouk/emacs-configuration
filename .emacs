@@ -58,7 +58,7 @@
 (add-hook 'python-mode-hook '(lambda () (require 'virtualenv)))
 
 (add-hook 'python-mode-hook '(lambda () 
-     (define-key python-mode-map "<f5>" 'magit-status)))
+     (define-key python-mode-map (kbd "<f5>") 'magit-status)))
 
 
 ;;; Electric Pairs
