@@ -10,6 +10,7 @@
 (add-to-list 'load-path "~/.emacs.d/coffee-mode")
 (add-to-list 'load-path "~/.emacs.d/popup")
 (add-to-list 'load-path "~/.emacs.d/highlight-identation")
+(add-to-list 'load-path "~/.emacs.d/magit")
 
 ;;; Major modes
 (autoload 'python-mode "python" "Python Major Mode" t)
@@ -18,7 +19,6 @@
 ;;; Activate theme on file extension detection
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
-(run-with-idle-timer 600 1 #'zone)
 
 ;;; Load theme
 (require 'color-theme-solarized)
@@ -40,6 +40,8 @@
 (speedbar 1)
 ;;;(add-to-list 'linum-disabled-modes-list '(speedbar-mode))
 
+;;; GIT with Magit
+(require 'magit)
 
 ;;; Define Tabbing as PEP8
 (setq-default indent-tabs-mode nil)
@@ -54,6 +56,10 @@
 
 ;;; Virtualenv dependancy
 (add-hook 'python-mode-hook '(lambda () (require 'virtualenv)))
+
+(add-hook 'python-mode-hook '(lambda () 
+     (define-key python-mode-map "<f5>" 'magit-status)))
+
 
 ;;; Electric Pairs
 (add-hook 'python-mode-hook

@@ -16,3 +16,6 @@
 [submodule ".emacs.d/highlight-identation"]
 	path = .emacs.d/highlight-identation
 	url = https://github.com/antonj/Highlight-Indentation-for-Emacs.git
+[submodule ".emacs.d/magit"]
+	path = .emacs.d/magit
+	url = https://github.com/magit/magit.git
