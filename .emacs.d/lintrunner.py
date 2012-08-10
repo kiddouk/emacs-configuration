@@ -115,7 +115,7 @@ class PylintRunner(LintRunner):
         r'\s*(?P<description>.*)$')
     command = PYLINT_COMMAND
     sane_default_ignore_codes = set([
-        "C0103",  # Naming convention
+        #"C0103",  # Naming convention
         "C0111",  # Missing Docstring
         "E1002",  # Use super on old-style class
         "W0232",  # No __init__
@@ -177,9 +177,7 @@ class Pep8Runner(LintRunner):
       spiders/structs.py:25:33: W602 deprecated form of raising exception
       spiders/structs.py:51:9: E301 expected 1 blank line, found 0 """
     command = PEP8_COMMAND
-    # sane_default_ignore_codes = set([
-    #     'RW29', 'W391',
-    #     'W291', 'WO232'])
+    sane_default_ignore_codes = set(['E501'])
     output_matcher = re.compile(
         r'(?P<filename>[^:]+):'
         r'(?P<line_number>[^:]+):'
@@ -194,7 +192,8 @@ class Pep8Runner(LintRunner):
 
     @property
     def run_flags(self):
-        return '--repeat', '--ignore=' + ','.join(self.ignore_codes)
+        print '--repeat', '--ignore=' + ','.join(self.operative_ignore_codes)
+        return '--repeat', '--ignore=' + ','.join(self.operative_ignore_codes)
 
 
 class PyflakesRunner(LintRunner):
