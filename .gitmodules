@@ -13,3 +13,6 @@
 [submodule ".emacs.d/popup"]
 	path = .emacs.d/popup
 	url = https://github.com/m2ym/popup-el.git
+[submodule ".emacs.d/highlight-identation"]
+	path = .emacs.d/highlight-identation
+	url = https://github.com/antonj/Highlight-Indentation-for-Emacs.git

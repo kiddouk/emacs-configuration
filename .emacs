@@ -8,6 +8,8 @@
 (add-to-list 'load-path "/usr/local/share/emacs/23.3/lisp/progmodes")
 (add-to-list 'load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (add-to-list 'load-path "~/.emacs.d/coffee-mode")
+(add-to-list 'load-path "~/.emacs.d/popup")
+(add-to-list 'load-path "~/.emacs.d/highlight-identation")
 
 ;;; Major modes
 (autoload 'python-mode "python" "Python Major Mode" t)
@@ -16,9 +18,14 @@
 ;;; Activate theme on file extension detection
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
+(run-with-idle-timer 600 1 #'zone)
 
 ;;; Load theme
 (require 'color-theme-solarized)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-solarized-dark)))
 
 ;;; Some key tuning for Mac OS X
 ;;;(setq mac-option-key-is-meta nil)
@@ -66,6 +73,10 @@
 (add-hook 'python-mode-hook '(lambda () 
      (define-key python-mode-map "\C-m" 'newline-and-indent)))
 
+(require 'highlight-indentation)
+(add-hook 'python-mode-hook 'highlight-indentation-mode)
+
+
 ;;; inline syntax checking with pylin
 (require 'flymake)
 (require 'flymake-cursor)
@@ -103,6 +114,11 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
 
+;;; Activate Auto Complete to use rope
+;;;(ac-ropemacs-initialize)
+;;;(add-hook 'python-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-ropemacs)))
+(setq ac-dwim t)
+(setq ac-use-quick-help t)
 
 ;;; Enable yassnippet for snippet completion
 ;;; By default, the TAB key is used and fall back to whatever
