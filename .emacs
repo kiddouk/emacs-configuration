@@ -12,6 +12,7 @@
 (add-to-list 'load-path "~/.emacs.d/highlight-identation")
 (add-to-list 'load-path "~/.emacs.d/magit")
 
+
 ;;; Major modes
 (autoload 'python-mode "python" "Python Major Mode" t)
 (autoload 'coffee-mode "coffee" "Coffee Script mode" t)
@@ -44,6 +45,9 @@
 (setq sr-speedbar-right-side nil) ; Speedbar should be on the left ?
 (speedbar 1)
 ;;;(add-to-list 'linum-disabled-modes-list '(speedbar-mode))
+
+;;; Remove the toolbar if compiled for X
+(tool-bar-mode 0)
 
 ;;; GIT with Magit
 (require 'magit)
@@ -83,8 +87,8 @@
 (add-hook 'python-mode-hook '(lambda () 
      (define-key python-mode-map "\C-m" 'newline-and-indent)))
 
-(require 'highlight-indentation)
-(add-hook 'python-mode-hook 'highlight-indentation-mode)
+;;(require 'highlight-indentation)
+;;(add-hook 'python-mode-hook 'highlight-indentation-mode)
 
 
 ;;; inline syntax checking with pylin
