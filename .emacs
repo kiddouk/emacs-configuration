@@ -26,6 +26,18 @@
 (desktop-save-mode 1)
 
 
+;;; Prevent backup file
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;;; YAML mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-hook 'yaml-mode-hook
+     '(lambda ()
+        (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+
 ;;; Load theme
 (require 'color-theme-solarized)
 (eval-after-load "color-theme"
