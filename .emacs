@@ -12,6 +12,8 @@
 (add-to-list 'load-path "~/.emacs.d/highlight-identation")
 (add-to-list 'load-path "~/.emacs.d/magit")
 
+(set-face-attribute 'default nil :family "Source Code Pro")
+(set-face-attribute 'default nil :height 140)
 
 ;;; Major modes
 (autoload 'python-mode "python" "Python Major Mode" t)
