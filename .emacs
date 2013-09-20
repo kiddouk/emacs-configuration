@@ -18,10 +18,12 @@
 ;;; Major modes
 (autoload 'python-mode "python" "Python Major Mode" t)
 (autoload 'coffee-mode "coffee" "Coffee Script mode" t)
+(autoload 'scss-mode "scss-mode")
 
 ;;; Activate theme on file extension detection
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;;; Start emacs-server
 (server-start)
