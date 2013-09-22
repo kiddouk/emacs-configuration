@@ -19,3 +19,24 @@
 [submodule ".emacs.d/magit"]
 	path = .emacs.d/magit
 	url = https://github.com/magit/magit.git
+[submodule ".emacs.d/site-lisp/expand-region.el"]
+	path = .emacs.d/site-lisp/expand-region.el
+	url = https://github.com/magnars/expand-region.el.git
+[submodule ".emacs.d/site-lisp/ace-jump-mode"]
+	path = .emacs.d/site-lisp/ace-jump-mode
+	url = https://github.com/winterTTr/ace-jump-mode.git
+[submodule ".emacs.d/site-lisp/smex"]
+	path = .emacs.d/site-lisp/smex
+	url = https://github.com/nonsequitur/smex.git
+[submodule ".emacs.d/site-lisp/mark-multiple.el"]
+	path = .emacs.d/site-lisp/mark-multiple.el
+	url = https://github.com/magnars/mark-multiple.el.git
+[submodule ".emacs.d/site-lisp/multiple-cursors.el"]
+	path = .emacs.d/site-lisp/multiple-cursors.el
+	url = https://github.com/magnars/multiple-cursors.el.git
+[submodule ".emacs.d/emmet-mode"]
+	path = .emacs.d/emmet-mode
+	url = https://github.com/smihica/emmet-mode.git
+[submodule ".emacs.d/site-lisp/emmet-mode"]
+	path = .emacs.d/site-lisp/emmet-mode
+	url = https://github.com/smihica/emmet-mode.git
