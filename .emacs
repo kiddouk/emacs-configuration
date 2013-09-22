@@ -1,8 +1,10 @@
 (add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
-(add-to-list 'load-path "~/.emacs.d/Pymacs")
-(add-to-list 'load-path "~/.emacs.d/pylookup")
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/smex")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/ace-jump-mode")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/expand-region.el")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/multiple-cursors.el")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/emmet-mode")
+(add-to-list 'load-path "~/.emacs.d/defuns")
 (add-to-list 'load-path "/usr/local/share/emacs/23.3/lisp/")
 (add-to-list 'load-path "/usr/local/share/emacs/23.3/lisp/net")
 (add-to-list 'load-path "/usr/local/share/emacs/23.3/lisp/progmodes")
@@ -12,8 +14,23 @@
 (add-to-list 'load-path "~/.emacs.d/highlight-identation")
 (add-to-list 'load-path "~/.emacs.d/magit")
 
+;;; Font is probably the most important setting. I want to read code.
 (set-face-attribute 'default nil :family "Source Code Pro")
 (set-face-attribute 'default nil :height 140)
+
+;;; Rebind awful Emacs bindings.
+;;; Mostly because it forces me to learn them and discover
+;;; some super new features
+
+(require 'key-bindings)
+(load "~/.emacs.d/defuns/defuns-buffer.el")
+;;; Enable minor modes
+;;; A collection of extra modes used everywhere nearly
+(require 'smex)
+(require 'expand-region)
+(require 'ace-jump-mode)
+(require 'multiple-cursors)
+(require 'setup-html-mode)
 
 ;;; Major modes
 (autoload 'python-mode "python" "Python Major Mode" t)
@@ -24,6 +41,7 @@
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
 
 ;;; Start emacs-server
 (server-start)
@@ -77,7 +95,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;;
-;;; PYTHON RELATED CALLS 
+;;; PYTHON RELATED CALLS
 ;;;
 
 ;;; Virtualenv dependancy
@@ -101,7 +119,7 @@
     (insert-pair)))
 
 ;;; bind RET to py-newline-and-indent
-(add-hook 'python-mode-hook '(lambda () 
+(add-hook 'python-mode-hook '(lambda ()
      (define-key python-mode-map "\C-m" 'newline-and-indent)))
 
 ;;(require 'highlight-indentation)
@@ -133,7 +151,7 @@
   "Return the errors on the current line or nil if none exist"
   (let* ((line-no (flymake-current-line-no)))
     (nth 0 (flymake-find-err-info flymake-err-info line-no))))
-  
+
 (defun flymake-display-err-message-for-current-line ()
   "Display a message with errors/warnings for current line if it has errors and/or warnings."
   (interactive)
@@ -141,7 +159,7 @@
          (line-err-info-list  (nth 0 (flymake-find-err-info flymake-err-info line-no)))
          (message-data        (flymake-make-err-menu-data line-no line-err-info-list)))
     (if message-data (progn (princ (car message-data) t)
-                            (mapcar (lambda (m) 
+                            (mapcar (lambda (m)
                                       (terpri t)
                                       (princ (caar m) t))
                                     (cdr message-data)))
@@ -154,12 +172,12 @@
 
 (defun flymake-load-and-check-if-not-loaded (trigger-type)
   "If flymake is not loaded, load and start a check and return t. Otherwise return nil."
-  (if flymake-mode 
+  (if flymake-mode
       nil
     (flymake-mode-on-without-check)
     (flymake-start-syntax-check trigger-type)
     t))
-  
+
 (defun show-next-flymake-error ()
   "Load flymake.el if necessary. Jump to next error and display it."
   (interactive)
