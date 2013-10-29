@@ -14,3 +14,10 @@ Including indent-buffer, which should not be called automatically on save."
   (untabify-buffer)
   (delete-trailing-whitespace)
   (indent-buffer))
+
+(defun electric-pair ()
+  "Insert character pair without surrounding spaces"
+  (interactive)
+  (let (parens-require-spaces)
+    (insert-pair)))
+
