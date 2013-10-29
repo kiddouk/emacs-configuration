@@ -1,0 +1,39 @@
+# name: class
+# contributor: Sebastien Requiem <sebastien@requiem.fr>
+# key: class
+# --
+
+/**
+ * $1 - FIXME description
+ * @constructor
+${2:$
+    (let ((indent " ")
+         (variables_to_members (split-string yas/text ",[ ]*" t))
+         (members "")
+         member)
+        (while variables_to_members
+            (setq member (car variables_to_members)
+                  variables_to_members (cdr variables_to_members)           
+                  members (concat members "* @param {type} " member " - FIXME\n" indent))
+         )
+         members
+      )}*/
+function ${1:ClassName$(upcase-initials yas/text)} (${2:arg1, arg2$(downcase yas/text)}) {
+    ${2:$
+    (let ((indent (make-string (current-column) 32))
+         (variables_to_members (split-string yas/text ",[ ]*" t))
+         (members "")
+         member)
+        (while variables_to_members
+            (setq member (car variables_to_members)
+                  variables_to_members (cdr variables_to_members)           
+                  members (concat members "this." member " = " member ";\n" indent))
+         )
+         members
+      )}
+      $0
+}
+
+module.exports = $1
+           
+        

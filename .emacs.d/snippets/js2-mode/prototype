@@ -1,0 +1,27 @@
+# name: prototype
+# contributor: Sebastien Requiem <sebastien@requiem.fr>
+# key: prototype
+# --
+
+/**
+ * $1 - FIXME description
+${2:$
+    (let ((indent " ")
+         (variables (split-string yas/text ",[ ]*" t))
+         (members "")
+         member)
+        (while variables
+            (setq member (car variables)
+                  variables (cdr variables)
+                  members (concat members "* @param {type} " member " - FIXME\n" indent))
+         )
+         members
+      )}*/
+prototype.${1:methodeName$
+        (concat
+          (downcase (substring yas/text 0 1))
+          (substring yas/text 1)
+        )} = function (${2:arg1, arg2$(downcase yas/text)}) {
+    $0
+
+};
