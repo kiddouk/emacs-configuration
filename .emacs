@@ -33,6 +33,7 @@
 (require 'setup-js2-mode)
 (require 'setup-swank)
 (require 'setup-yasnippet)
+(require 'setup-auto-complete)
 
 ;;; Load theme
 (load-theme 'solarized-dark)
