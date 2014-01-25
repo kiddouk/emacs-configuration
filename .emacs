@@ -55,7 +55,6 @@
 
 ;;; Start emacs-server
 (server-start)
-(desktop-save-mode 1)
 
 ;;; Prevent backup file
 (setq make-backup-files nil)
