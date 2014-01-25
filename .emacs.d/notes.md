@@ -10,5 +10,10 @@ I have ido-mode activated along with smex. I would like, only when looking to op
 
 I blog using Mardown files. I am not that good in english. I would lik e a syntax checker along with a synonim dictionnary
 
+## My emacs should start a server mode automatically when I log in OS X ##
 
+A server mode should be started. When I really start emacs, I actually just want a client.
+
+* Reload all projects on server start
+* This implies a couple of modes already started
 
