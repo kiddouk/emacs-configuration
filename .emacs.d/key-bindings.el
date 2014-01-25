@@ -11,19 +11,23 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
-;; This is your old M-x.
+;; This is my old M-x.
 (global-set-key (kbd "C-c C-m") 'execute-extended-command)
 
 ;; Expand region (increases selected region by semantic units)
 (global-set-key (kbd "C-'") 'er/expand-region)
 
+;; Setup a correct Jump search-based (in buffer). W00t !
 (global-set-key (kbd "C-ø") 'ace-jump-mode)
 
 ;; Mark additional regions matching current region
 (global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)
 
-
 ;; Cleanup buffer to re-indent the whole file
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
+
+;; Setup visual-regexp keybindings
+(define-key global-map (kbd "C-c r") 'vr/replace)
+(define-key global-map (kbd "C-c q") 'vr/query-replace)
 
 (provide 'key-bindings)

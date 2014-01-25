@@ -38,9 +38,11 @@
 (require 'ido)
 (require 'flx-ido)
 (require 'ido-vertical-mode)
+(require 'visual-regexp)
 
 ;; I want projectoile to manage as many porjects as possible
 (require 'projectile)
+
 
 ;;; Enable mode configuration
 (require 'setup-html-mode)
