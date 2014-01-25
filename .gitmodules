@@ -49,3 +49,6 @@
 [submodule ".emacs.d/site-lisp/slime"]
 	path = .emacs.d/site-lisp/slime
 	url = https://github.com/antifuchs/slime.git
+[submodule ".emacs.d/site-lisp/jslint-reporter"]
+	path = .emacs.d/site-lisp/jslint-reporter
+	url = https://github.com/FND/jslint-reporter.git
