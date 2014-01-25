@@ -14,6 +14,12 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+;; Make sure that the .emacs.d is up to date
+;; This is using Cask (and Pallet) to manage dependencies
+;; And it should be installed and in the path first
+(require 'cask)
+(cask-initialize)
+
 ;;; Font is probably the most important setting. I want to read code.
 (set-face-attribute 'default nil :family "Source Code Pro")
 (set-face-attribute 'default nil :height 140)
