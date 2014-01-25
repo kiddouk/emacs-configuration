@@ -10,13 +10,13 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 ;;; Font is probably the most important setting. I want to read code.
 (set-face-attribute 'default nil :family "Source Code Pro")
 (set-face-attribute 'default nil :height 140)
-
-
 
 ;;; Rebind awful Emacs bindings.
 ;;; Mostly because it forces me to learn them and discover
