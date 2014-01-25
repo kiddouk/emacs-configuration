@@ -18,9 +18,8 @@ ${2:$
          )
          members
       )}*/
-function ${1:ClassName$(upcase-initials yas/text)} ($2) {
-    ${2:$
-    (let ((indent (make-string (current-column) 32))
+function ${1:ClassName$(upcase-initials yas/text)}($2) {
+    ${2:$(let ((indent (make-string (current-column) 32))
          (variables_to_members (split-string yas/text ",[ ]*" t))
          (members "")
          member)
@@ -30,9 +29,7 @@ function ${1:ClassName$(upcase-initials yas/text)} ($2) {
                   members (concat members "this." member " = " member ";\n" indent))
          )
          members
-      )}
-
-      $0
+      )}$0
 }
 
 module.exports = $1
