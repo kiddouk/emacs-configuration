@@ -1,8 +1,12 @@
+
+;; Add load path to configuration file
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/defuns")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
 
+
+;; Uses Marmelade package repository
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -11,6 +15,8 @@
 ;;; Font is probably the most important setting. I want to read code.
 (set-face-attribute 'default nil :family "Source Code Pro")
 (set-face-attribute 'default nil :height 140)
+
+
 
 ;;; Rebind awful Emacs bindings.
 ;;; Mostly because it forces me to learn them and discover
@@ -26,6 +32,15 @@
 (require 'expand-region)
 (require 'ace-jump-mode)
 (require 'markdown-mode)
+
+;; I Do interative shell and the new Sublime 2 inspired fuzzy matching
+;; See it in action here : http://www.youtube.com/watch?v=_swuJ1RuMgk
+(require 'ido)
+(require 'flx-ido)
+(require 'ido-vertical-mode)
+
+;; I want projectoile to manage as many porjects as possible
+(require 'projectile)
 
 ;;; Enable mode configuration
 (require 'setup-html-mode)
