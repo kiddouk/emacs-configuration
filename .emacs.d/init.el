@@ -14,6 +14,10 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+;; We tune in the Garbage Collector to prevent
+;; to fire it too often (every ~20MB)
+(setq gc-cons-threshold 20000000)
+
 ;; Make sure that the .emacs.d is up to date
 ;; This is using Cask (and Pallet) to manage dependencies
 ;; And it should be installed and in the path first
@@ -39,16 +43,14 @@
 (require 'ace-jump-mode)
 (require 'markdown-mode)
 
-;; I Do interative shell and the new Sublime 2 inspired fuzzy matching
-;; See it in action here : http://www.youtube.com/watch?v=_swuJ1RuMgk
-(require 'ido)
-(require 'flx-ido)
-(require 'ido-vertical-mode)
+
 (require 'visual-regexp)
 
-;; I want projectoile to manage as many porjects as possible
+;; I want projectile to manage as many projects as possible
 (require 'projectile)
+(projectile-global-mode)
 
+(require 'setup-ido)
 
 ;;; Enable mode configuration
 (require 'setup-html-mode)
