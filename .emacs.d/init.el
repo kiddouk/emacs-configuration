@@ -1,10 +1,9 @@
-
 ;; Add load path to configuration file
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/defuns")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
-
+(add-to-list 'load-path "~/.emacs.d/site-lisp/highlight-indentation")
 
 ;; Uses Marmelade package repository
 (require 'package)
@@ -59,12 +58,13 @@
 (require 'setup-swank)
 (require 'setup-yasnippet)
 (require 'setup-auto-complete)
+(require 'setup-python)
 
 ;;; Load theme
 (load-theme 'solarized-dark)
 
 ;;; Start emacs-server
-(server-start)
+;;; (server-start)
 
 ;;; Prevent backup file
 (setq make-backup-files nil)
@@ -89,7 +89,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
