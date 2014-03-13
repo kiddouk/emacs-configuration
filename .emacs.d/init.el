@@ -21,7 +21,7 @@
 ;; Make sure that the .emacs.d is up to date
 ;; This is using Cask (and Pallet) to manage dependencies
 ;; And it should be installed and in the path first
-(require 'cask)
+(require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
 ;;; Font is probably the most important setting. I want to read code.
