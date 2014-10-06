@@ -1,0 +1,14 @@
+# -*- coding: utf-8
+# name: blog-headers
+# contributor: Sebastien Requiem <sebastien@requiem.fr>
+# key: blog-headers
+---
+layout: ${1:LAYOUT}
+title: ${2:TITLE}
+author: SEBASTIEN REQUIEM
+---
+
+<p class="intro">Intro <a href="" title="">text</a></p>
+
+
+
