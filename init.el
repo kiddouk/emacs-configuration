@@ -1,13 +1,17 @@
 
 ;; Add load path to configuration file
-(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/defuns")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/jdee-2.4.1/lisp")
+;;(add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/android-mode")
 
-(require 'cask "~/.cask/cask.el")
+
+
+;;; I use brew cask to install cask, you may want to change that path
+(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
 (cask-initialize)
+(require 'pallet)
 
 
 ;; We tune in the Garbage Collector to prevent
@@ -49,11 +53,10 @@
 (require 'setup-html-mode)
 (require 'setup-flycheck)
 (require 'setup-js2-mode)
-(require 'setup-swank)
+;;(require 'setup-swank)
 (require 'setup-yasnippet)
 (require 'setup-auto-complete)
 (require 'setup-coffee-mode)
-(require 'setup-jdee-mode)
 
 ;;; Load theme
 ;;; (load-theme 'solarized-light)
@@ -86,16 +89,28 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
-(add-to-list 'auto-mode-alist '("\\.java\\'" . jde-mode))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(android-mode-builder (quote gradle))
+ '(android-mode-root-file-plist
+   (quote
+    (ant "AndroidManifest.xml" gradle "local.properties" maven "AndroidManifest.xml")))
+ '(cedet-android-sdk-root "~/Downloads/android-sdk-macosx")
  '(coffee-tab-width 2)
  '(ispell-program-name "/usr/local/bin/aspell")
- '(jde-complete-function (quote jde-complete-menu)))
+ '(jde-complete-function (quote jde-complete-menu))
+ '(semantic-default-submodes
+   (quote
+    (global-semantic-idle-completions-mode global-semantic-idle-scheduler-mode global-semanticdb-minor-mode global-semantic-idle-summary-mode global-semantic-mru-bookmark-mode)))
+ '(semantic-idle-scheduler-idle-time 10)
+ '(semanticdb-javap-classpath
+   (quote
+    ("/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Classes/classes.jar"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -103,3 +118,15 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'narrow-to-region 'disabled nil)
+
+(require 'android-mode)
+
+
+
+
+
+
+
+
+
+
