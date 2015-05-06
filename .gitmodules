@@ -1,57 +1,15 @@
-[submodule "modules/yasnippet"]
-	path = modules/yasnippet
-	url = https://github.com/capitaomorte/yasnippet.git
-[submodule "modules/Pymacs"]
-	path = modules/Pymacs
-	url = https://github.com/pinard/Pymacs.git
-[submodule "modules/themes/emacs-color-theme-solarized"]
-	path = modules/themes/emacs-color-theme-solarized
-	url = https://github.com/sellout/emacs-color-theme-solarized.git
-[submodule "modules/auto-complete"]
-	path = modules/auto-complete
-	url = http://cx4a.org/repo/auto-complete.git/
-[submodule "modules/popup"]
-	path = modules/popup
-	url = https://github.com/m2ym/popup-el.git
-[submodule "modules/highlight-identation"]
-	path = modules/highlight-identation
-	url = https://github.com/antonj/Highlight-Indentation-for-Emacs.git
-[submodule "modules/magit"]
-	path = modules/magit
-	url = https://github.com/magit/magit.git
-[submodule "modules/expand-region.el"]
-	path = modules/expand-region.el
-	url = https://github.com/magnars/expand-region.el.git
-[submodule "modules/ace-jump-mode"]
-	path = modules/ace-jump-mode
-	url = https://github.com/winterTTr/ace-jump-mode.git
-[submodule "modules/smex"]
-	path = modules/smex
-	url = https://github.com/nonsequitur/smex.git
-[submodule "modules/mark-multiple.el"]
-	path = modules/mark-multiple.el
-	url = https://github.com/magnars/mark-multiple.el.git
-[submodule "modules/multiple-cursors.el"]
-	path = modules/multiple-cursors.el
-	url = https://github.com/magnars/multiple-cursors.el.git
-[submodule "modules/emmet-mode"]
-	path = modules/emmet-mode
-	url = https://github.com/smihica/emmet-mode.git
-[submodule "modules/emmet-mode"]
-	path = modules/emmet-mode
-	url = https://github.com/smihica/emmet-mode.git
-[submodule "modules/markdown-mode"]
-	path = modules/markdown-mode
-	url = git://jblevins.org/git/markdown-mode.git
-[submodule "modules/swank-js"]
-	path = modules/swank-js
-	url = https://github.com/swank-js/swank-js.git
-[submodule "modules/jslint-reporter"]
-	path = modules/jslint-reporter
-	url = https://github.com/FND/jslint-reporter.git
-[submodule "modules/cedet"]
-	path = modules/cedet
-	url = git@github.com:emacsmirror/cedet.git
 [submodule "modules/android-mode"]
 	path = modules/android-mode
 	url = git@github.com:remvee/android-mode.git
+[submodule "modules/cedet"]
+	path = modules/cedet
+	url = git@github.com:emacsmirror/cedet.git
+[submodule "modules/jslint-reporter"]
+	path = modules/jslint-reporter
+	url = https://github.com/FND/jslint-reporter.git
+[submodule "modules/swank-js"]
+	path = modules/swank-js
+	url = https://github.com/swank-js/swank-js.git
+[submodule "modules/slime"]
+	path = modules/slime
+	url = git@github.com:slime/slime.git

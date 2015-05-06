@@ -2,9 +2,9 @@
 ;; Add load path to configuration file
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/defuns")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/slime")
+(add-to-list 'load-path "~/.emacs.d/modules/slime")
 ;;(add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/android-mode")
+(add-to-list 'load-path "~/.emacs.d/modules/android-mode")
 
 
 
