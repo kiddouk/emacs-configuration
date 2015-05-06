@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+# name: lint
+# contributor: Sebastien Requiem <sebastien.requiem@gmail.com>
+# key: lint
+# --
+/*jslint devel:true, node: true */

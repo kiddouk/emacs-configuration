@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+# name: migration
+# contributor: Sebastien Requiem <sebastien@requiem.fr>
+# key: migration
+# --
+"use strict"
+var Bluebird = require('bluebird'),
+    Sequelize = require('sequelize'),
+    sequelize = require('../src/config/postgres');
+
+module.exports = {
+    up: function (queryInterface) {
+        if (queryInterface === undefined) {
+            queryInterface = sequelize.queryInterface;
+        }
+        return new Bluebird(function (resolve, reject) {
+            queryInterface.
+            resolve();
+        });
+    },
+
+    down: function (queryInterface) {
+        if (queryInterface === undefined) {
+            queryInterface = sequelize.queryInterface;
+        }
+
+        // add reverting commands here, calling 'done' when finished
+        return new Bluebird(function (resolve, reject) {
+            queryInterface.
+            resolve();
+        });
+    }
+};

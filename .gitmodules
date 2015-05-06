@@ -1,54 +1,57 @@
-[submodule ".emacs.d/yasnippet"]
-	path = .emacs.d/yasnippet
+[submodule "modules/yasnippet"]
+	path = modules/yasnippet
 	url = https://github.com/capitaomorte/yasnippet.git
-[submodule ".emacs.d/Pymacs"]
-	path = .emacs.d/Pymacs
+[submodule "modules/Pymacs"]
+	path = modules/Pymacs
 	url = https://github.com/pinard/Pymacs.git
-[submodule ".emacs.d/themes/emacs-color-theme-solarized"]
-	path = .emacs.d/themes/emacs-color-theme-solarized
+[submodule "modules/themes/emacs-color-theme-solarized"]
+	path = modules/themes/emacs-color-theme-solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
-[submodule ".emacs.d/auto-complete"]
-	path = .emacs.d/auto-complete
+[submodule "modules/auto-complete"]
+	path = modules/auto-complete
 	url = http://cx4a.org/repo/auto-complete.git/
-[submodule ".emacs.d/popup"]
-	path = .emacs.d/popup
+[submodule "modules/popup"]
+	path = modules/popup
 	url = https://github.com/m2ym/popup-el.git
-[submodule ".emacs.d/highlight-identation"]
-	path = .emacs.d/highlight-identation
+[submodule "modules/highlight-identation"]
+	path = modules/highlight-identation
 	url = https://github.com/antonj/Highlight-Indentation-for-Emacs.git
-[submodule ".emacs.d/magit"]
-	path = .emacs.d/magit
+[submodule "modules/magit"]
+	path = modules/magit
 	url = https://github.com/magit/magit.git
-[submodule ".emacs.d/site-lisp/expand-region.el"]
-	path = .emacs.d/site-lisp/expand-region.el
+[submodule "modules/expand-region.el"]
+	path = modules/expand-region.el
 	url = https://github.com/magnars/expand-region.el.git
-[submodule ".emacs.d/site-lisp/ace-jump-mode"]
-	path = .emacs.d/site-lisp/ace-jump-mode
+[submodule "modules/ace-jump-mode"]
+	path = modules/ace-jump-mode
 	url = https://github.com/winterTTr/ace-jump-mode.git
-[submodule ".emacs.d/site-lisp/smex"]
-	path = .emacs.d/site-lisp/smex
+[submodule "modules/smex"]
+	path = modules/smex
 	url = https://github.com/nonsequitur/smex.git
-[submodule ".emacs.d/site-lisp/mark-multiple.el"]
-	path = .emacs.d/site-lisp/mark-multiple.el
+[submodule "modules/mark-multiple.el"]
+	path = modules/mark-multiple.el
 	url = https://github.com/magnars/mark-multiple.el.git
-[submodule ".emacs.d/site-lisp/multiple-cursors.el"]
-	path = .emacs.d/site-lisp/multiple-cursors.el
+[submodule "modules/multiple-cursors.el"]
+	path = modules/multiple-cursors.el
 	url = https://github.com/magnars/multiple-cursors.el.git
-[submodule ".emacs.d/emmet-mode"]
-	path = .emacs.d/emmet-mode
+[submodule "modules/emmet-mode"]
+	path = modules/emmet-mode
 	url = https://github.com/smihica/emmet-mode.git
-[submodule ".emacs.d/site-lisp/emmet-mode"]
-	path = .emacs.d/site-lisp/emmet-mode
+[submodule "modules/emmet-mode"]
+	path = modules/emmet-mode
 	url = https://github.com/smihica/emmet-mode.git
-[submodule ".emacs.d/site-lisp/markdown-mode"]
-	path = .emacs.d/site-lisp/markdown-mode
+[submodule "modules/markdown-mode"]
+	path = modules/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
-[submodule ".emacs.d/site-lisp/swank-js"]
-	path = .emacs.d/site-lisp/swank-js
+[submodule "modules/swank-js"]
+	path = modules/swank-js
 	url = https://github.com/swank-js/swank-js.git
-[submodule ".emacs.d/site-lisp/slime"]
-	path = .emacs.d/site-lisp/slime
-	url = https://github.com/antifuchs/slime.git
-[submodule ".emacs.d/site-lisp/jslint-reporter"]
-	path = .emacs.d/site-lisp/jslint-reporter
+[submodule "modules/jslint-reporter"]
+	path = modules/jslint-reporter
 	url = https://github.com/FND/jslint-reporter.git
+[submodule "modules/cedet"]
+	path = modules/cedet
+	url = git@github.com:emacsmirror/cedet.git
+[submodule "modules/android-mode"]
+	path = modules/android-mode
+	url = git@github.com:remvee/android-mode.git
