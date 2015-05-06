@@ -19,6 +19,7 @@ ${2:$
          members
       )}*/
 function ${1:ClassName$(upcase-initials yas/text)}($2) {
+    "use strict";
     ${2:$(let ((indent (make-string (current-column) 32))
          (variables_to_members (split-string yas/text ",[ ]*" t))
          (members "")
