@@ -1,10 +1,10 @@
-
 ;; Add load path to configuration file
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/defuns")
 (add-to-list 'load-path "~/.emacs.d/modules/slime")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
+(add-to-list 'load-path "~/.emacs.d/modules/swank-js")
 (add-to-list 'load-path "~/.emacs.d/modules/android-mode")
+(add-to-list 'load-path "~/.emacs.d/modules/highlight-indentation")
 
 (require 'slime-autoloads)
 (setq inferior-lisp-program "/usr/local/bin/sbcl")
@@ -24,6 +24,9 @@
 ;; Make sure that the .emacs.d is up to date
 ;; This is using Cask (and Pallet) to manage dependencies
 ;; And it should be installed and in the path first
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
 ;;; Font is probably the most important setting. I want to read code.
 (set-face-attribute 'default nil :family "Source Code Pro")
 (set-face-attribute 'default nil :height 140)
@@ -60,12 +63,13 @@
 (require 'setup-yasnippet)
 (require 'setup-auto-complete)
 (require 'setup-coffee-mode)
+(require 'setup-python)
 
 ;;; Load theme
 ;;; (load-theme 'solarized-light)
 
 ;;; Start emacs-server
-(server-start)
+;;; (server-start)
 
 ;;; Prevent backup file
 (setq make-backup-files nil)
@@ -92,7 +96,7 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
-
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

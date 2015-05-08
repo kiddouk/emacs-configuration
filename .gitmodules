@@ -13,3 +13,6 @@
 [submodule "modules/slime"]
 	path = modules/slime
 	url = git@github.com:slime/slime.git
+[submodule "modules/highlight-indentation"]
+	path = modules/highlight-indentation
+	url = https://github.com/antonj/Highlight-Indentation-for-Emacs.git
