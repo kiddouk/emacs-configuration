@@ -3,9 +3,12 @@
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/defuns")
 (add-to-list 'load-path "~/.emacs.d/modules/slime")
-;;(add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/swank-js")
 (add-to-list 'load-path "~/.emacs.d/modules/android-mode")
 
+(require 'slime-autoloads)
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+(slime-setup '(slime-fancy))
 
 
 ;;; I use brew cask to install cask, you may want to change that path
