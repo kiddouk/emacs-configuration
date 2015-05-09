@@ -5,17 +5,15 @@
 (add-to-list 'load-path "~/.emacs.d/modules/swank-js")
 (add-to-list 'load-path "~/.emacs.d/modules/android-mode")
 (add-to-list 'load-path "~/.emacs.d/modules/highlight-indentation")
+(add-to-list 'load-path "~/.emacs.d/modules/jde-2.4.1/lisp")
 
-(require 'slime-autoloads)
-(setq inferior-lisp-program "/usr/local/bin/sbcl")
-(slime-setup '(slime-fancy))
-
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
 
 ;;; I use brew cask to install cask, you may want to change that path
 (require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
 (cask-initialize)
 (require 'pallet)
-
 
 ;; We tune in the Garbage Collector to prevent
 ;; to fire it too often (every ~20MB)
@@ -46,7 +44,6 @@
 (require 'ace-jump-mode)
 (require 'markdown-mode)
 
-
 (require 'visual-regexp)
 
 ;; I want projectile to manage as many projects as possible
@@ -59,14 +56,15 @@
 (require 'setup-html-mode)
 (require 'setup-flycheck)
 (require 'setup-js2-mode)
-;;(require 'setup-swank)
+(require 'setup-swank)
 (require 'setup-yasnippet)
 (require 'setup-auto-complete)
 (require 'setup-coffee-mode)
 (require 'setup-python)
+(require 'setup-java)
 
 ;;; Load theme
-;;; (load-theme 'solarized-light)
+(load-theme 'solarized t)
 
 ;;; Start emacs-server
 ;;; (server-start)
@@ -97,6 +95,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
