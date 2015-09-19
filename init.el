@@ -69,10 +69,6 @@
 ;;; Start emacs-server
 ;;; (server-start)
 
-;;; Prevent backup file
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-
 ;;; Some key tuning for Mac OS X
 ;;;(setq mac-option-key-is-meta nil)
 (setq mac-command-key-is-meta t)
@@ -131,22 +127,19 @@
 
 
 ;; make backup to a designated dir, mirroring the full path
-
+(setq backup-directory-alist `(("." . "~/.saves/emacs-backup/")))
+(setq auto-save-default nil)
 (defun my-backup-file-name (fpath)
   "Return a new file path of a given file path.
 If the new path's directories does not exist, create them."
-  (let* (
-        (backupRootDir "~/.emacs.d/emacs-backup/")
-        (filePath (replace-regexp-in-string "[A-Za-z]:" "" fpath )) ; remove Windows driver letter in path, ⁖ “C:”
-        (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir filePath "~") ))
-        )
-    (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
-    backupFilePath
+  (let ((backupRootDir "~/.emacs.d/emacs-backup/"))
+    (if (not (file-exists-p backupRootDir)) (make-directory backupRootDir))
+    (concat backupRootDir (file-name-nondirectory fpath))
   )
 )
 
 (setq make-backup-file-name-function 'my-backup-file-name)
-
+(setq make-backup-files nil)
 
 
 
