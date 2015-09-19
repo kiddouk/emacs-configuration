@@ -7,9 +7,26 @@
   (setq jde-complete-function (quote jde-complete-menu))
   (setq jde-global-classpath (quote ("/Users/sebastien/android-sdk/platforms/android-22/android.jar")))
   (setq jde-jdk-registry (quote (("1.8.0" . "/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"))))
-   (setq jde-sourcepath (quote ("/Users/kiddouk/code/android/voyr")))
-   (setq jde-jdk (quote ("1.8.0")))
-   )
+  (setq jde-sourcepath (quote ("/Users/kiddouk/code/android/voyr")))
+  (setq jde-jdk (quote ("1.8.0")))
+
+
+  (add-hook 'before-save-hook
+            (lambda ()
+              (jde-import-kill-extra-imports)
+              (jde-import-all)
+              (jde-import-organize))
+            nil t)
+  (add-hook 'after-save-hook 'recompile)
+
+  (add-hook 'java-mode-hook (lambda ()
+                              (c-set-offset 'arglist-intro '+)
+                              (setq c-basic-offset 4
+                                    tab-width 4
+                                    indent-tabs-mode t)))
+
+
+  )
 
 (require 'cl)
 ;; Helper function to find files. Source: emacswiki
