@@ -6,6 +6,6 @@
 (ido-mode t)
 (ido-everywhere t)
 (flx-ido-mode t)
-
+(ido-vertical-mode t)
 
 (provide 'setup-ido)
