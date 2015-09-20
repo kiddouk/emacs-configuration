@@ -14,6 +14,7 @@
 (require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
 (cask-initialize)
 (require 'pallet)
+(pallet-mode t)
 
 ;; We tune in the Garbage Collector to prevent
 ;; to fire it too often (every ~20MB)
