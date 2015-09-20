@@ -62,6 +62,7 @@
 (require 'setup-auto-complete)
 (require 'setup-coffee-mode)
 (require 'setup-python)
+(require 'android-mode)
 (require 'setup-java)
 
 ;;; Load theme
@@ -100,11 +101,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(android-mode-builder (quote gradle))
- '(android-mode-root-file-plist
-   (quote
-    (ant "AndroidManifest.xml" gradle "local.properties" maven "AndroidManifest.xml")))
- '(cedet-android-sdk-root "~/Downloads/android-sdk-macosx")
  '(coffee-tab-width 2)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(jde-complete-function (quote jde-complete-menu))
@@ -123,7 +119,6 @@
  )
 (put 'narrow-to-region 'disabled nil)
 
-(require 'android-mode)
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 

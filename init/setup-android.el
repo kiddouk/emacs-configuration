@@ -39,17 +39,4 @@
   )
 (add-hook 'c-mode-common-hook 'my-cedet-hook)
  
-;; 5. use four spaces to indent java source
-(defun my-java-mode-hook ()
-  (setq indent-tabs-mode nil)
-  (setq tab-width 4)
-  )
-(add-hook 'java-mode-hook 'my-java-mode-hook)
-
-
-;; Load gradle mode for compilation from emacs
-(require 'gradle-mode)
-(gradle-mode 1)
-
-
 (provide 'setup-android)
