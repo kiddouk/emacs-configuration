@@ -13,11 +13,17 @@
 
   (add-hook 'before-save-hook
             (lambda ()
-              (jde-import-kill-extra-imports)
-              (jde-import-all)
-              (jde-import-organize))
-            nil t)
-  (add-hook 'after-save-hook 'recompile)
+              (when (string= (file-name-extension buffer-file-name) "java")
+                (jde-import-kill-extra-imports)
+                (jde-import-all)
+                (jde-import-organize))
+              nil t)
+            )
+  (add-hook 'after-save-hook
+            (lambda ()
+              (when (string= (file-name-extension buffer-file-name) "java")
+                'recompile)
+              ))
 
   (add-hook 'java-mode-hook (lambda ()
                               (c-set-offset 'arglist-intro '+)
