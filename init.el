@@ -64,6 +64,7 @@
 (require 'setup-python)
 (require 'android-mode)
 (require 'setup-java)
+(require 'setup-powerline)
 
 ;;; Load theme
 (load-theme 'solarized t)
