@@ -89,6 +89,7 @@
 
 ;;; Activate Major Mode on file extension detection
 (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.xml\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . html-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
