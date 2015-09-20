@@ -16,3 +16,6 @@
 [submodule "modules/highlight-indentation"]
 	path = modules/highlight-indentation
 	url = https://github.com/antonj/Highlight-Indentation-for-Emacs.git
+[submodule "modules/powerline"]
+	path = modules/powerline
+	url = https://github.com/jonathanchu/emacs-powerline

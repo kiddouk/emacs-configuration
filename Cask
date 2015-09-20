@@ -32,7 +32,6 @@
 (depends-on "pallet")
 (depends-on "pkg-info")
 (depends-on "popup")
-(depends-on "powerline")
 (depends-on "projectile")
 (depends-on "s")
 (depends-on "smex")
