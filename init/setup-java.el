@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/modules/jdee-2.4.1/lisp")
+(add-to-list 'load-path "~/.emacs.d/vendor/jdee-2.4.1/lisp")
 
 (defun setup-java-mode ()
   (require 'jde)

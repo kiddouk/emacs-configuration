@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+# name: class
+# contributor: Sebastien Requiem <sebastien@requiem.fr>
+# key: fragment_class
+# --
+package <FIXME>;
+
+import android.view.View;
+import android.app.Fragment;
+import android.os.Bundle;
+import android.view.ViewGroup;
+import android.view.LayoutInflater;
+import android.util.Log;
+
+import butterknife.ButterKnife;
+import butterknife.Bind;
+    
+/**
+ * $1 - FIXME description
+ */    
+public class ${1:ClassName$(upcase-initials yas/text)} extends Fragment {
+
+    public final static String TAG = "$1";
+
+    @Override
+    public void onCreate(Bundle state) {
+        super.onCreate(state);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.category_list, container, false);
+        ButterKnife.bind(this, view);
+
+        return view;
+    }
+  
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
+}
