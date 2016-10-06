@@ -1,1 +1,9 @@
 .cask
+ac-comphist.dat
+auto-save-list/
+emacs-backup/
+ido.last
+projectile-bookmarks.eld
+semanticdb/*
+smex-items
+url/
