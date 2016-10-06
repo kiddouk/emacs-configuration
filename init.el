@@ -1,8 +1,14 @@
 ;; Add load path to configuration file
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/init")
+(add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/defuns")
-(add-to-list 'load-path "~/.emacs.d/modules/slime")
-(add-to-list 'load-path "~/.emacs.d/modules/swank-js")
 (add-to-list 'load-path "~/.emacs.d/modules/android-mode")
 (add-to-list 'load-path "~/.emacs.d/modules/highlight-indentation")
 (add-to-list 'load-path "~/.emacs.d/modules/jde-2.4.1/lisp")
@@ -11,7 +17,7 @@
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
 ;;; I use brew cask to install cask, you may want to change that path
-(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
@@ -19,12 +25,6 @@
 ;; We tune in the Garbage Collector to prevent
 ;; to fire it too often (every ~20MB)
 (setq gc-cons-threshold 20000000)
-
-;; Make sure that the .emacs.d is up to date
-;; This is using Cask (and Pallet) to manage dependencies
-;; And it should be installed and in the path first
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
 
 ;;; Font is probably the most important setting. I want to read code.
 (set-face-attribute 'default nil :family "Source Code Pro")
@@ -57,7 +57,6 @@
 (require 'setup-html-mode)
 (require 'setup-flycheck)
 (require 'setup-js2-mode)
-(require 'setup-swank)
 (require 'setup-yasnippet)
 (require 'setup-auto-complete)
 (require 'setup-coffee-mode)
@@ -97,6 +96,7 @@
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . coffee-mode))
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.java\\'" . java-mode))
+(add-to-list 'auto-mode-alist '("\\.elm\\'" . elm-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -106,6 +106,7 @@
  '(coffee-tab-width 2)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(jde-complete-function (quote jde-complete-menu))
+ '(json-reformat:indent-width 1)
  '(semantic-default-submodes
    (quote
     (global-semantic-idle-completions-mode global-semantic-idle-scheduler-mode global-semanticdb-minor-mode global-semantic-idle-summary-mode global-semantic-mru-bookmark-mode)))
@@ -139,7 +140,3 @@ If the new path's directories does not exist, create them."
 
 (setq make-backup-file-name-function 'my-backup-file-name)
 (setq make-backup-files nil)
-
-
-
-

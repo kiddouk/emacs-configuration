@@ -2,6 +2,8 @@
 
 (defun setup-java-mode ()
   (require 'jde)
+  (require 'java-snippets)
+  (require 'jdok)
   (message "JDE enabled")
   (setq jde-enable-abbrev-mode t)
   (setq jde-complete-function (quote jde-complete-menu))
@@ -13,12 +15,13 @@
 
   (add-hook 'before-save-hook
             (lambda ()
+              (untabify (point-min) (point-max)) 
               (when (string= (file-name-extension buffer-file-name) "java")
-                (jde-import-kill-extra-imports)
                 (jde-import-all)
                 (jde-import-organize))
               nil t)
             )
+  
   (add-hook 'after-save-hook
             (lambda ()
               (when (string= (file-name-extension buffer-file-name) "java")
@@ -29,7 +32,7 @@
                               (c-set-offset 'arglist-intro '+)
                               (setq c-basic-offset 4
                                     tab-width 4
-                                    indent-tabs-mode t)))
+                                    indent-tabs-mode nil)))
 
 
   )
