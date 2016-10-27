@@ -19,6 +19,7 @@
 ;;; I use brew cask to install cask, you may want to change that path
 (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
+
 (require 'pallet)
 (pallet-mode t)
 
@@ -107,6 +108,9 @@
  '(ispell-program-name "/usr/local/bin/aspell")
  '(jde-complete-function (quote jde-complete-menu))
  '(json-reformat:indent-width 1)
+ '(package-selected-packages
+   (quote
+    (dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit kotlin-mode json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
  '(semantic-default-submodes
    (quote
     (global-semantic-idle-completions-mode global-semantic-idle-scheduler-mode global-semanticdb-minor-mode global-semantic-idle-summary-mode global-semantic-mru-bookmark-mode)))
