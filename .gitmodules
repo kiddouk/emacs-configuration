@@ -1,6 +1,3 @@
-[submodule "modules/android-mode"]
-	path = modules/android-mode
-	url = git@github.com:remvee/android-mode.git
 [submodule "modules/cedet"]
 	path = modules/cedet
 	url = git@github.com:emacsmirror/cedet.git
@@ -19,3 +16,6 @@
 [submodule "modules/powerline"]
 	path = modules/powerline
 	url = https://github.com/jonathanchu/emacs-powerline
+[submodule "modules/kotlin-mode"]
+	path = modules/kotlin-mode
+	url = https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode.git
