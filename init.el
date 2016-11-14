@@ -131,7 +131,6 @@
 
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-
 ;; make backup to a designated dir, mirroring the full path
 (setq backup-directory-alist `(("." . "~/.saves/emacs-backup/")))
 (setq auto-save-default nil)
@@ -141,8 +140,8 @@ If the new path's directories does not exist, create them."
   (let ((backupRootDir "~/.emacs.d/emacs-backup/"))
     (if (not (file-exists-p backupRootDir)) (make-directory backupRootDir))
     (concat backupRootDir (file-name-nondirectory fpath))
+    )
   )
-)
 
 (setq make-backup-file-name-function 'my-backup-file-name)
 (setq make-backup-files nil)
