@@ -21,3 +21,14 @@ Including indent-buffer, which should not be called automatically on save."
   (let (parens-require-spaces)
     (insert-pair)))
 
+(defun gradle-mode-maybe ()
+  "Activate gradle mode if a gradle file is found.
+   Assumes: Projectile mode activated."
+  (when (projectile-verify-file "build.gradle")
+    (gradle-mode))
+
+  (when (and (bound-and-true-p gradle-mode) (projectile-verify-file "gradlew"))
+    (set 'gradle-use-gradlew t)
+    (set 'gradle-gradlew-executable "./gradlew")
+    ))
+

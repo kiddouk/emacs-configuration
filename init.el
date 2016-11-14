@@ -52,6 +52,8 @@
 (require 'projectile)
 (projectile-global-mode)
 
+(add-hook 'find-file-hook 'gradle-mode-maybe)
+
 (require 'setup-ido)
 
 ;;; Enable mode configuration
