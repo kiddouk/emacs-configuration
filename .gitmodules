@@ -16,6 +16,3 @@
 [submodule "modules/powerline"]
 	path = modules/powerline
 	url = https://github.com/jonathanchu/emacs-powerline
-[submodule "modules/kotlin-mode"]
-	path = modules/kotlin-mode
-	url = https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode.git
