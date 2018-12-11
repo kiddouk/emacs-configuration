@@ -1,0 +1,3 @@
+* Wish list for emacs configuration
+** simple toggle for font increase and decrease on all buffers
+** configure backtab to swish buffer
