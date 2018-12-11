@@ -10,7 +10,7 @@
 (setq-default js2-show-parse-errors nil)
 (setq-default js2-strict-missing-semi-warning nil)
 (setq-default js2-strict-trailing-comma-warning t) ;; jshint does not warn about this now for some reason
-
+(setq-default js2-basic-offset 2)
 
 ;;; Configure Flycheck to use jslint
 

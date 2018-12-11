@@ -6,12 +6,16 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
 (add-to-list 'load-path "~/.emacs.d/init")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/defuns")
 (add-to-list 'load-path "~/.emacs.d/modules/android-mode")
 (add-to-list 'load-path "~/.emacs.d/modules/highlight-indentation")
 (add-to-list 'load-path "~/.emacs.d/modules/jde-2.4.1/lisp")
+(add-to-list 'load-path "~/.emacs.d/modules/kotlin-mode")
 
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (setq exec-path (append exec-path '("/usr/local/bin")))
@@ -50,7 +54,6 @@
 
 ;; I want projectile to manage as many projects as possible
 (require 'projectile)
-(projectile-global-mode)
 
 (add-hook 'find-file-hook 'gradle-mode-maybe)
 
@@ -67,6 +70,7 @@
 (require 'android-mode)
 (require 'setup-java)
 (require 'setup-powerline)
+(require 'setup-kotlin)
 
 ;;; Load theme
 (load-theme 'solarized t)
@@ -107,12 +111,18 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2)
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(gradle-mode t)
  '(ispell-program-name "/usr/local/bin/aspell")
  '(jde-complete-function (quote jde-complete-menu))
  '(json-reformat:indent-width 1)
+ '(kotlin-tab-width 4)
  '(package-selected-packages
    (quote
-    (dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit kotlin-mode json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
+    (lua-mode swift-mode dockerfile-mode helm-dash slack yaml-mode emamux dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
+ '(projectile-mode t nil (projectile))
  '(semantic-default-submodes
    (quote
     (global-semantic-idle-completions-mode global-semantic-idle-scheduler-mode global-semanticdb-minor-mode global-semantic-idle-summary-mode global-semantic-mru-bookmark-mode)))
