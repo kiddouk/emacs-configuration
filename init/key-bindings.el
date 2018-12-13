@@ -18,13 +18,15 @@
 (global-set-key (kbd "C-'") 'er/expand-region)
 
 ;; Setup a correct Jump search-based (in buffer). W00t !
-(global-set-key (kbd "C-ø") 'ace-jump-mode)
+(global-set-key (kbd "C-j") 'ace-jump-mode)
 
 ;; Mark additional regions matching current region
-(global-set-key (kbd "M-æ") 'mc/mark-all-like-this-dwim)
+(global-set-key (kbd "M-a") 'mc/mark-all-like-this-dwim)
 
 ;; Cleanup buffer to re-indent the whole file
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
+
+(global-set-key (kbd "C-g") 'magit-status)
 
 ;; Setup visual-regexp keybindings
 (define-key global-map (kbd "C-c r") 'vr/replace)
