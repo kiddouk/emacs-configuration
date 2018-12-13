@@ -73,7 +73,7 @@
 (require 'setup-kotlin)
 
 ;;; Load theme
-(load-theme 'solarized t)
+(load-theme 'solarized-dark t)
 
 ;;; Start emacs-server
 ;;; (server-start)
