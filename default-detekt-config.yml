@@ -341,11 +341,11 @@ naming:
     propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
     privatePropertyPattern: '(_)?[A-Za-z][A-Za-z0-9]*'
   VariableMaxLength:
-    active: false
+    active: true
     maximumVariableNameLength: 64
   VariableMinLength:
-    active: false
-    minimumVariableNameLength: 1
+    active: true
+    minimumVariableNameLength: 4
   VariableNaming:
     active: true
     variablePattern: '[a-z][A-Za-z0-9]*'
@@ -369,7 +369,7 @@ potential-bugs:
   DuplicateCaseInWhenExpression:
     active: true
   EqualsAlwaysReturnsTrueOrFalse:
-    active: false
+    active: true
   EqualsWithHashCodeExist:
     active: true
   ExplicitGarbageCollectionCall:
@@ -402,7 +402,7 @@ style:
   CollapsibleIfStatements:
     active: false
   DataClassContainsFunctions:
-    active: false
+    active: true
     conversionFunctionPrefix: 'to'
   EqualsNullCall:
     active: false
@@ -447,7 +447,7 @@ style:
     excludeImportStatements: true
     excludeCommentStatements: false
   MayBeConst:
-    active: false
+    active: true
   ModifierOrder:
     active: true
   NestedClassesVisibility:
@@ -499,9 +499,9 @@ style:
   UntilInsteadOfRangeTo:
     active: false
   UnusedImports:
-    active: false
+    active: true
   UnusedPrivateClass:
-    active: false
+    active: true
   UnusedPrivateMember:
     active: false
     allowedNames: "(_|ignored|expected|serialVersionUID)"
