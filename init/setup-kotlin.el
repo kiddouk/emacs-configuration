@@ -2,5 +2,7 @@
 ;;; Each setup-<mode> should plug into auto-complete system
 
 (require 'kotlin-mode)
+(require 'flycheck-kotlin-detekt)
+(flycheck-kotlin-setup)
 (add-to-list 'compilation-error-regexp-alist '("^:?[a-zA-Z0-9]+: \\(.*?\\): (\\([0-9]+\\), \\([0-9]+\\)): .*?$" 1 2 3))
 (provide 'setup-kotlin)
