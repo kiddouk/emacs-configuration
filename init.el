@@ -6,6 +6,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
@@ -26,6 +27,10 @@
 
 (require 'pallet)
 (pallet-mode t)
+
+;; We now set the path for emacs
+(when (memq window-system '(mac ns x))
+    (exec-path-from-shell-initialize))
 
 ;; We tune in the Garbage Collector to prevent
 ;; to fire it too often (every ~20MB)
@@ -121,7 +126,7 @@
  '(kotlin-tab-width 4)
  '(package-selected-packages
    (quote
-    (lua-mode swift-mode dockerfile-mode helm-dash slack yaml-mode emamux dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
+    (exec-path-from-shell lua-mode swift-mode dockerfile-mode helm-dash slack yaml-mode emamux dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
  '(projectile-mode t nil (projectile))
  '(semantic-default-submodes
    (quote
