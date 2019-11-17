@@ -76,9 +76,10 @@
 (require 'setup-java)
 (require 'setup-powerline)
 (require 'setup-kotlin)
+(require 'setup-org)
 
 ;;; Load theme
-(load-theme 'solarized-dark t)
+(load-theme 'spacemacs-dark t)
 
 ;;; Start emacs-server
 ;;; (server-start)
@@ -126,7 +127,7 @@
  '(kotlin-tab-width 4)
  '(package-selected-packages
    (quote
-    (exec-path-from-shell lua-mode swift-mode dockerfile-mode helm-dash slack yaml-mode emamux dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
+    (terraform-mode hcl-mode org-bullets exec-path-from-shell lua-mode swift-mode dockerfile-mode helm-dash slack yaml-mode emamux dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
  '(projectile-mode t nil (projectile))
  '(semantic-default-submodes
    (quote
@@ -135,12 +136,6 @@
  '(semanticdb-javap-classpath
    (quote
     ("/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Classes/classes.jar"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 (put 'narrow-to-region 'disabled nil)
 
 
