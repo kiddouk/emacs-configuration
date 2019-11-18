@@ -103,7 +103,7 @@
 (custom-theme-set-faces
  'user
  '(variable-pitch ((t (:family "Source Sans Pro" :height 120 :weight normal))))
- '(fixed-pitch ((t (:family "Source Code Pro" :height -2.9 :width normal :weight normal))))
+ '(fixed-pitch ((t (:family "Source Code Pro" :height 0.9 :width normal :weight normal))))
  '(org-block                 ((t (:inherit fixed-pitch))))
  '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
  '(org-property-value        ((t (:inherit fixed-pitch))) t)
