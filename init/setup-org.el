@@ -89,17 +89,17 @@
 
 
 
-(setq-default prettify-symbols-alist '(("#+BEGIN_SRC" . "†")
-                                       ("#+END_SRC" . "†")
+(setq-default prettify-symbols-alist '(("#+BEGIN_SRC" . "λ")
+                                       ("#+END_SRC" . "λ")
                                        ("#+begin_src" . "†")
-                                       ("#+end_src" . "†")
+                                       ("#+end_src" . "λ")
                                        (">=" . "≥")
                                        ("=>" . "⇨")))
 (setq prettify-symbols-unprettify-at-point 'right-edge)
 (add-hook 'org-mode-hook 'prettify-symbols-mode)
 
 
-;;; We now want fixed-pitch for any source code and we use source-code font.
+;;; We now want fixed-pitch for any source code and we use source-code font. Since source code is width-fixed, it will do the trick automatically
 (custom-theme-set-faces
  'user
  '(variable-pitch ((t (:family "Source Sans Pro" :height 120 :weight normal))))
@@ -111,5 +111,20 @@
  '(org-tag                   ((t (:inherit (shadow fixed-pitch) :weight bold))))
  '(org-verbatim              ((t (:inherit (shadow fixed-pitch))))))
 
+
+
+;;; Configure org-refile to read all of the files that are currently opened
+(defun +org/opened-buffer-files ()
+  "Return the list of files currently opened in emacs"
+  (delq nil
+        (mapcar (lambda (x)
+                  (if (and (buffer-file-name x)
+                           (string-match "\\.org$"
+                                         (buffer-file-name x)))
+                      (buffer-file-name x)))
+                (buffer-list))))
+
+(setq org-refile-targets '((+org/opened-buffer-files :maxlevel . 3)))
+(setq org-refile-use-outline-path 'file)
 
 (provide 'setup-org)
