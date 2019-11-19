@@ -50,6 +50,8 @@
 ;;; Enable minor modes
 ;;; A collection of extra modes used everywhere nearly
 (require 'magit)
+(setq epa-pinentry-mode 'loopback)
+(pinentry-start)
 (require 'smex)
 (require 'expand-region)
 (require 'ace-jump-mode)
@@ -125,9 +127,13 @@
  '(jde-complete-function (quote jde-complete-menu))
  '(json-reformat:indent-width 1)
  '(kotlin-tab-width 4)
+ '(org-bullets-bullet-list
+   (quote
+    ("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")) t)
+ '(org-ellipsis "⤵")
  '(package-selected-packages
    (quote
-    (terraform-mode hcl-mode org-bullets exec-path-from-shell lua-mode swift-mode dockerfile-mode helm-dash slack yaml-mode emamux dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
+    (pinentry terraform-mode hcl-mode org-bullets exec-path-from-shell lua-mode swift-mode dockerfile-mode helm-dash slack yaml-mode emamux dash-at-point android-mode visual-regexp solarized-theme smex projectile pallet markdown-mode magit json-mode js2-mode java-snippets ido-vertical-mode helm-git-grep helm handlebars-sgml-mode groovy-mode gradle-mode flymake-json flycheck flx-ido expand-region emmet-mode elm-mode color-theme-solarized coffee-mode auto-complete ace-jump-mode)))
  '(projectile-mode t nil (projectile))
  '(semantic-default-submodes
    (quote
@@ -155,3 +161,16 @@ If the new path's directories does not exist, create them."
 
 (setq make-backup-file-name-function 'my-backup-file-name)
 (setq make-backup-files nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(fixed-pitch ((t (:family "Source Code Pro" :height 0.9 :width normal :weight normal))))
+ '(org-block ((t (:inherit fixed-pitch))))
+ '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+ '(org-property-value ((t (:inherit fixed-pitch))) t)
+ '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+ '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold))))
+ '(org-verbatim ((t (:inherit (shadow fixed-pitch)))))
+ '(variable-pitch ((t (:family "Source Sans Pro" :height 120 :weight normal)))))
