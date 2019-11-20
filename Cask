@@ -44,6 +44,7 @@
 (depends-on "org-bullets")
 (depends-on "package-build")
 (depends-on "pallet")
+(depends-on "pinentry")
 (depends-on "pkg-info")
 (depends-on "popup")
 (depends-on "projectile")
