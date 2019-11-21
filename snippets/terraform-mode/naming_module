@@ -1,0 +1,30 @@
+# contributor: sebastien requiem
+# name: naming_module
+# key: tfnm    
+
+// This module is to be used for all your naming needs across the skm-ice project
+// Use this yasnippet carefully ;)
+
+module "naming" {
+    source = "git@github.com:skm-ice/terraform-module-naming.git?ref=${1:default master}"
+    
+    data = {
+        env = var.env
+        stack = var.stack
+        aws_region = var.aws_region
+        account_id = var.account_id
+
+        ${3:your_own_variables_here} = var.${4:variable name}
+    }
+}
+
+
+module tags {
+  source = "git@github.com:skm-ice/terraform-module-tagging?ref=${2:default master}"
+  env = var.env
+  stack = var.stack
+
+  extra = {
+    ${5:tag name} = ${6:tag value}
+  }
+}
