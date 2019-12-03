@@ -169,6 +169,7 @@ If the new path's directories does not exist, create them."
  '(fixed-pitch ((t (:family "Source Code Pro" :height 0.9 :width normal :weight normal))))
  '(org-block ((t (:inherit fixed-pitch))))
  '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+ '(org-table ((t (:inherit (shadow fixed-pitch)))))
  '(org-property-value ((t (:inherit fixed-pitch))) t)
  '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
  '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold))))
