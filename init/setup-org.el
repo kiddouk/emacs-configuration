@@ -5,6 +5,8 @@
 
 (require 'org)
 
+(setq org-directory "~/notes")
+
 ;;; We now use symbola globally to ensure that all the symbols are rendered correctly
 (when (member "Symbola" (font-family-list))
   (set-fontset-font "fontset-default" nil
@@ -126,5 +128,8 @@
 
 (setq org-refile-targets '((+org/opened-buffer-files :maxlevel . 3)))
 (setq org-refile-use-outline-path 'file)
+
+;;; Capture sutff
+(setq org-default-notes-file (concat org-directory "/notes.org"))
 
 (provide 'setup-org)
