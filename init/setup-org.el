@@ -130,6 +130,6 @@
 (setq org-refile-use-outline-path 'file)
 
 ;;; Capture sutff
-(setq org-default-notes-file (concat org-directory "/notes.org"))
+(setq org-default-notes-file (concat org-directory "/inbox.org"))
 
 (provide 'setup-org)
