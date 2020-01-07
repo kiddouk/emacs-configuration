@@ -74,7 +74,6 @@
 
 
 ;;; from https://zzamboni.org/post/beautifying-org-mode-in-emacs/ , we replace all dashes with a nice bullet
-
 (font-lock-add-keywords 'org-mode
                         '(("^ *\\([-]\\) "
                            (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
@@ -85,9 +84,6 @@
 
 ;;; from: https://www.reddit.com/r/emacs/comments/9lpupc/i%5Fuse%5Fmarkdown%5Frather%5Fthan%5Forgmode%5Ffor%5Fmy%5Fnotes/
 ;;; we pretify the Souce blocks by removing the +BEGIN_SRC and all shit with a simple symbol
-
-
-
 (setq-default prettify-symbols-alist '(("#+BEGIN_SRC" . "λ")
                                        ("#+END_SRC" . "λ")
                                        ("#+begin_src" . "†")
@@ -129,13 +125,27 @@
 ;;; Capture sutff
 (setq org-default-notes-file (concat org-directory "/inbox.org"))
 
-
-
 ;;; Useful templates for caputing efficiently
 (setq org-capture-templates
       '(("t" "Simple Todo" entry (file+headline "~/notes/inbox.org" "")
          "* TODO %^{Todo} %^g \n:PROPERTIES:\n:Created: %U\n:END:\n\n%?\n" :prepend t :empty-lines 1 :created 1)
         ("r" "Reference" entry (file+headline "~/notes/inbox.org" "References")
          "* Ref %^{Url} %^g \n:PROPERTIES:\n:Created: %U\n:END:\n\n%?\n" :prepend t :empty-lines 1 :created 1)))
+
+
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+(setq org-agenda-files '("~/notes/inbox.org"
+                         "~/notes/gtd.org"
+                         "~/notes/tickler.org"))
+
+
+;;; Shortcuts
+;;; C-c k (capture)
+
+;;; C-c o d (deadline)
+
+;;; C-c C-q (tag entry)
+
+;;; C-c t (sparse-tree on tools)
 
 (provide 'setup-org)
