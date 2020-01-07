@@ -4,7 +4,6 @@
 ;;; most of those setting are taken from: https://mstempl.netlify.com/post/beautify-org-mode/
 
 (require 'org)
-
 (setq org-directory "~/notes")
 
 ;;; We now use symbola globally to ensure that all the symbols are rendered correctly
@@ -26,7 +25,6 @@
 
 ;;; Org mode configuration goes here
 ;;; we want indentation to work in orgmode
-
 (setq org-startup-indented t
       org-src-tab-acts-natively t)
 
@@ -43,7 +41,6 @@
 ;;; entities shall be utf-8
 ;;; odd levels only
 (setq org-hide-emphasis-markers t
-      org-fontify-done-headline t
       org-hide-leading-stars t
       org-pretty-entities t
       org-odd-levels-only t)
