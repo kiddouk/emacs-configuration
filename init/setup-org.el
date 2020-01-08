@@ -127,7 +127,7 @@
 
 ;;; Useful templates for caputing efficiently
 (setq org-capture-templates
-      '(("t" "Simple Todo" entry (file+headline "~/notes/inbox.org" "")
+      '(("t" "Simple Todo" entry (file+headline "~/notes/inbox.org" "Tasks")
          "* TODO %^{Todo} %^g \n:PROPERTIES:\n:Created: %U\n:END:\n\n%?\n" :prepend t :empty-lines 1 :created 1)
         ("r" "Reference" entry (file+headline "~/notes/inbox.org" "References")
          "* Ref %^{Url} %^g \n:PROPERTIES:\n:Created: %U\n:END:\n\n%?\n" :prepend t :empty-lines 1 :created 1)))
