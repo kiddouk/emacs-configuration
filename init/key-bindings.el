@@ -26,11 +26,11 @@
 ;; Cleanup buffer to re-indent the whole file
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
-(global-set-key (kbd "C-g") 'magit-status)
+(global-set-key (kbd "<f5>") 'magit-status)
 
 ;; Setup visual-regexp keybindings
 (define-key global-map (kbd "C-c r") 'vr/replace)
-(define-key global-map (kbd "C-c q") 'vr/query-replace)
+(define-key global-map (kbd "C-c q r") 'vr/query-replace)
 
 (define-key global-map (kbd "<C-tab>") 'other-window)
 (provide 'key-bindings)
