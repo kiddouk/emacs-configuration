@@ -136,7 +136,8 @@
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 (setq org-agenda-files '("~/notes/inbox.org"
                          "~/notes/gtd.org"
-                         "~/notes/tickler.org"))
+                         "~/notes/tickler.org"
+                         "~/notes/ufst.org"))
 
 
 ;;; GTD specific
