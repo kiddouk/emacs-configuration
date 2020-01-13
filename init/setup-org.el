@@ -133,7 +133,7 @@
          "* Ref %^{Url} %^g \n:PROPERTIES:\n:Created: %U\n:END:\n\n%?\n" :prepend t :empty-lines 1 :created 1)))
 
 
-(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+(setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 (setq org-agenda-files '("~/notes/inbox.org"
                          "~/notes/gtd.org"
                          "~/notes/tickler.org"
